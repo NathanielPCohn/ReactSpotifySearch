@@ -7,7 +7,9 @@ class App extends React.Component {
 			query: "", 
 			artists: [], 
 			loading: false, 
-			genres: {}
+			genres: {},
+			client_id: "",
+			client_secret: ""
 		};
 		//bind component to methods
 		this.getToken = this.getToken.bind(this);
@@ -17,10 +19,9 @@ class App extends React.Component {
 	}
 	getToken() {
 		var component = this;
-		console.log('hi');
 		$.ajax({
 			beforeSend: function(request) {
-				request.setRequestHeader('Authorization', 'Basic ' + new Buffer(client_id + ':' + client_secret).toString('base64'));
+				request.setRequestHeader('Authorization', 'Basic ' + new Buffer(this.state.client_id + ':' + this.state.client_secret).toString('base64'));
 			},
 			url: component.state.url,
 			type: "post",
