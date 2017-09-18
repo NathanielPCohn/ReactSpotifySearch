@@ -4,9 +4,6 @@ class App extends React.Component {
 		//set initial state
 		this.state = {
 			url: 'https://accounts.spotify.com/api/token',
-			client_id: '0a3a447a0ffc48869dd1b4a9aad0e220',
-			client_secret: 'c8b8f7967a6f4aeab3177037ea65712c',
-			token: "",
 			query: "", 
 			artists: [], 
 			loading: false, 
